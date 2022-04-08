@@ -1,0 +1,44 @@
+ import java.util.*;
+public class Main {
+
+ public static void main(String[] args) {
+     Scanner cs=new Scanner(System.in);
+     int num, reminder;
+     System.out.println("Enter the Number :");
+     num=cs.nextInt();
+     int smallest=Integer.MAX_VALUE;
+     int Sec_Smallest=Integer.MAX_VALUE;
+
+     while (num > 0)
+         {
+
+     reminder = num % 10;
+     if (smallest>=reminder)
+      {
+            Sec_Smallest=smallest;
+            smallest = reminder;
+      }
+      else if(reminder<=Sec_Smallest)
+             Sec_Smallest=reminder;
+     num = num / 10;
+
+         }
+     System.out.println("The Second Smallest Digit is : "+Sec_Smallest);
+     int sm=smallest*10;
+     int sec=sm+Sec_Smallest;
+     System.out.println("The Second Smallest Digit is : "+sec);
+     
+     cs.close();
+ }
+}
+
+
+//Solution:
+
+ Input1: 7136
+ output: 13
+ 
+ 
+ Input1: 9987
+ output: 78
+ 
